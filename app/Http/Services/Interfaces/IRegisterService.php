@@ -14,8 +14,7 @@ use App\Repositories\Interfaces\IUserRepository;
 
 interface IRegisterService
 {
-    public function __construct(IUserRepository $userRepository);
+  public function __construct(IUserRepository $userRepository);
 
-    public function insert(User $user);
-
+  public function insert(User $user);
 }

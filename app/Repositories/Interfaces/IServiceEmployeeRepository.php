@@ -13,15 +13,15 @@ use App\Entities\EmployeeService;
 
 interface IServiceEmployeeRepository
 {
-    public function __construct();
+  public function __construct();
 
-    public function get();
+  public function get();
 
-    public function getById($id);
+  public function getById($id);
 
-    public function insert(EmployeeService $employeeService);
+  public function insert(EmployeeService $employeeService);
 
-    public function update(EmployeeService $employeeService);
+  public function update(EmployeeService $employeeService);
 
-    public function delete($id);
+  public function delete($id);
 }

@@ -11,9 +11,9 @@ namespace App\Http\Services\Interfaces;
 
 interface ILoginService
 {
-    public function __construct(IUserService $userService);
+  public function __construct(IUserService $userService);
 
-    public function login($credentials);
+  public function login($credentials);
 
-    public function logout();
+  public function logout();
 }

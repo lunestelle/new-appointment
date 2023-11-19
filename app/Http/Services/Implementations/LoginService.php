@@ -15,25 +15,23 @@ use App\Http\Services\Interfaces\IUserService;
 
 class LoginService implements ILoginService
 {
-    public function __construct(IUserService $userService)
-    {
+  public function __construct(IUserService $userService)
+  {
+  }
 
+  public function login($credentials)
+  {
+    if (!Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']]) ) {
+      session()->flash('error-message','Wrong email address or password');
+      return redirect()->back();
     }
+    //success login
+    return redirect()->route('dashboard');
+  }
 
-    public function login($credentials)
-    {
-        if (!Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']]) ) {
-            session()->flash('error-message','Wrong email address or password');
-            return redirect()->back();
-        }
-        //success login
-        return redirect()->route('dashboard');
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('welcome');
-    }
-
+  public function logout()
+  {
+    Auth::logout();
+    return redirect()->route('welcome');
+  }
 }

@@ -13,15 +13,15 @@ use App\Entities\WorkingHour;
 
 interface IWorkingHourRepository
 {
-    public function __construct();
+  public function __construct();
 
-    public function get();
+  public function get();
 
-    public function getById($id);
+  public function getById($id);
 
-    public function insert(WorkingHour $workingHour);
+  public function insert(WorkingHour $workingHour);
 
-    public function update(WorkingHour $workingHour);
+  public function update(WorkingHour $workingHour);
 
-    public function delete($id);
+  public function delete($id);
 }

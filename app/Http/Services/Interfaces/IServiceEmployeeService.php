@@ -8,15 +8,15 @@ use App\Repositories\Interfaces\IServiceEmployeeRepository;
 
 interface IServiceEmployeeService
 {
-    public function __construct(IServiceEmployeeRepository $serviceEmployeeRepository);
+  public function __construct(IServiceEmployeeRepository $serviceEmployeeRepository);
 
-    public function get();
+  public function get();
 
-    public function getById($id);
+  public function getById($id);
 
-    public function insert(EmployeeService $employeeService);
+  public function insert(EmployeeService $employeeService);
 
-    public function update(EmployeeService $employeeService);
+  public function update(EmployeeService $employeeService);
 
-    public function delete($id);
+  public function delete($id);
 }

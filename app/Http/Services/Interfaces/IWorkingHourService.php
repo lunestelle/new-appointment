@@ -7,15 +7,15 @@ use App\Repositories\Interfaces\IWorkingHourRepository;
 
 interface IWorkingHourService
 {
-    public function __construct(IWorkingHourRepository $workingHourRepository);
+  public function __construct(IWorkingHourRepository $workingHourRepository);
 
-    public function get();
+  public function get();
 
-    public function getById($id);
+  public function getById($id);
 
-    public function insert(WorkingHour $workingHour);
+  public function insert(WorkingHour $workingHour);
 
-    public function update(WorkingHour $workingHour);
+  public function update(WorkingHour $workingHour);
 
-    public function delete($id);
+  public function delete($id);
 }

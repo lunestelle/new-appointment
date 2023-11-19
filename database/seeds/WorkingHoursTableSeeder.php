@@ -18,15 +18,15 @@ class WorkingHoursTableSeeder extends Seeder
     foreach ($employeeIds as $employeeId) {
       DB::table('working_hours')->insert([
         'employee_id' => $employeeId,
-        'date' => now()->toDateString(),
-        'start_time' => '09:00:00',
+        'date'        => now()->toDateString(),
+        'start_time'  => '09:00:00',
         'finish_time' => '17:00:00',
       ]);
 
       DB::table('working_hours')->insert([
         'employee_id' => $employeeId,
-        'date' => now()->addDay()->toDateString(),
-        'start_time' => '08:30:00',
+        'date'        => now()->addDay()->toDateString(),
+        'start_time'  => '08:30:00',
         'finish_time' => '16:30:00',
       ]);
     }

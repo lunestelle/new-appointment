@@ -15,18 +15,17 @@ use App\Repositories\Interfaces\IUserRepository;
 
 class RegisterService implements IRegisterService
 {
-    protected $userRepository;
+  protected $userRepository;
 
-    public function __construct(IUserRepository $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
+  public function __construct(IUserRepository $userRepository)
+  {
+    $this->userRepository = $userRepository;
+  }
 
-    public function insert(User $user)
-    {
-        //client role
-        $user->role_id = 2;
-        return $this->userRepository->insert($user);
-    }
-
+  public function insert(User $user)
+  {
+    //client role
+    $user->role_id = 2;
+    return $this->userRepository->insert($user);
+  }
 }

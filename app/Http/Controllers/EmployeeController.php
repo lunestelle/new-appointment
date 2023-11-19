@@ -20,8 +20,8 @@ class EmployeeController extends Controller
   public function __construct(IEmployeeService $employeeService, IService $service, User $user)
   {
     $this->employeeService = $employeeService;
-    $this->service = $service;
-    $this->user = $user;
+    $this->service         = $service;
+    $this->user            = $user;
   }
 
   /**
@@ -47,7 +47,7 @@ class EmployeeController extends Controller
   {
     $this->authorize('employees', Auth::user());
     $services = $this->service->get();
-    $users = $this->user->where('role_id', 2)->get();
+    $users    = $this->user->where('role_id', 2)->get();
     return view('employees.create', compact('services', 'users'));
   }
 
@@ -67,11 +67,11 @@ class EmployeeController extends Controller
 
     // Associate the selected user with the employee
     $employee->user_id = $request->input('user_id');
-    $employee->status = $request->input('status');
+    $employee->status  = $request->input('status');
     $employee->save();
 
     // Update the role_id in the User table
-    $selectedUser = User::find($request->input('user_id'));
+    $selectedUser          = User::find($request->input('user_id'));
     $selectedUser->role_id = 3; // Update with the appropriate role_id
     $selectedUser->save();
 
@@ -90,7 +90,7 @@ class EmployeeController extends Controller
   {
     $this->authorize('employees', Auth::user());
     $selectedValues = $employee->employeeServices;
-    $workingHour = $employee->workingHour->first();
+    $workingHour    = $employee->workingHour->first();
     return view('employees.show', compact('employee', 'selectedValues', 'workingHour'));
   }
 
@@ -104,9 +104,9 @@ class EmployeeController extends Controller
   public function edit(Employee $employee)
   {
     $this->authorize('employees', Auth::user());
-    $services = $this->service->get();
+    $services        = $this->service->get();
     $selected_values = implode(',', $employee->employeeServices->pluck('service_id')->toArray());
-    $workingHour = $employee->workingHour->first();
+    $workingHour     = $employee->workingHour->first();
     return view('employees.edit',compact('employee','services','selected_values','workingHour'));
   }
 

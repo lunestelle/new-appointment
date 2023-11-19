@@ -10,16 +10,15 @@ use App\Repositories\Interfaces\IWorkingHourRepository;
 
 interface IEmployeeService
 {
-    public function __construct(IEmployeeRepository $employeeRepository, IServiceEmployeeRepository $serviceEmployeeRepository, IWorkingHourRepository $workingHourRepository);
+  public function __construct(IEmployeeRepository $employeeRepository, IServiceEmployeeRepository $serviceEmployeeRepository, IWorkingHourRepository $workingHourRepository);
 
-    public function get();
+  public function get();
 
-    public function getById($id);
+  public function getById($id);
 
-    public function insert(EmployeeServiceViewModel $employeeServiceViewModel);
+  public function insert(EmployeeServiceViewModel $employeeServiceViewModel);
 
-    public function update(EmployeeServiceViewModel $employeeServiceViewModel, Employee $employee);
+  public function update(EmployeeServiceViewModel $employeeServiceViewModel, Employee $employee);
 
-    public function delete($id);
-
+  public function delete($id);
 }

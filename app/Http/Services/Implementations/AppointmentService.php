@@ -9,36 +9,35 @@ use App\Repositories\Interfaces\IAppointmentRepository;
 
 class AppointmentService implements IAppointmentService
 {
-    protected $appointmentRepository;
+  protected $appointmentRepository;
 
-    public function __construct(IAppointmentRepository $appointmentRepository)
-    {
-        $this->appointmentRepository = $appointmentRepository;
-    }
+  public function __construct(IAppointmentRepository $appointmentRepository)
+  {
+    $this->appointmentRepository = $appointmentRepository;
+  }
 
-    public function get()
-    {
-        return $this->appointmentRepository->get();
-    }
+  public function get()
+  {
+    return $this->appointmentRepository->get();
+  }
 
-    public function getById($id)
-    {
-        return $this->appointmentRepository->getById($id);
-    }
+  public function getById($id)
+  {
+    return $this->appointmentRepository->getById($id);
+  }
 
-    public function insert(Appointment $appointment)
-    {
-        return $this->appointmentRepository->insert($appointment);
-    }
+  public function insert(Appointment $appointment)
+  {
+    return $this->appointmentRepository->insert($appointment);
+  }
 
-    public function update(Appointment $appointment)
-    {
-        return $this->appointmentRepository->update($appointment);
-    }
+  public function update(Appointment $appointment)
+  {
+    return $this->appointmentRepository->update($appointment);
+  }
 
-    public function delete($id)
-    {
-        return $this->appointmentRepository->delete($id);
-    }
-
+  public function delete($id)
+  {
+    return $this->appointmentRepository->delete($id);
+  }
 }

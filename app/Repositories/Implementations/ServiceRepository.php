@@ -14,35 +14,34 @@ use App\Repositories\Interfaces\IServiceRepository;
 
 class ServiceRepository implements IServiceRepository
 {
+  public function __construct()
+  {
+  }
 
-    public function __construct()
-    {
-    }
+  public function get()
+  {
+    return Service::all();
+  }
 
-    public function get()
-    {
-        return Service::all();
-    }
+  public function getById($id)
+  {
+    return Service::find($id);
+  }
 
-    public function getById($id)
-    {
-        return Service::find($id);
-    }
+  public function insert(Service $service)
+  {
+    $service->save();
+    return $service;
+  }
 
-    public function insert(Service $service)
-    {
-       $service->save();
-       return $service;
-    }
+  public function update(Service $service)
+  {
+    $service->update();
+    return $service;
+  }
 
-    public function update(Service $service)
-    {
-        $service->update();
-        return $service;
-    }
-
-    public function delete($id)
-    {
-        return $this->getById($id)->delete();
-    }
+  public function delete($id)
+  {
+    return $this->getById($id)->delete();
+  }
 }

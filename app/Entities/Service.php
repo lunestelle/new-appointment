@@ -7,24 +7,24 @@ use Illuminate\Notifications\Notifiable;
 
 class Service extends Model
 {
-    use Notifiable;
+  use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'price'
-    ];
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+    'name', 'price'
+  ];
 
-    public function employeeServices()
-    {
-        return $this->hasMany('App\Entities\EmployeeService','service_id');
-    }
+  public function employeeServices()
+  {
+    return $this->hasMany('App\Entities\EmployeeService','service_id');
+  }
 
-    public function appointments()
-    {
-        return $this->hasMany('App\Entities\Appointment','service_id');
-    }
+  public function appointments()
+  {
+    return $this->hasMany('App\Entities\Appointment','service_id');
+  }
 }

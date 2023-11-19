@@ -12,7 +12,7 @@ class EmployeesTableSeeder extends Seeder
     DB::table('employees')->insert([
       [
         'user_id' => 2,
-        'status' => 'Active',
+        'status'  => 'Active',
       ],
     ]);
   }
