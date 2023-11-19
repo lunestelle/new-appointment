@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
         'email' => 'ash@gmail.com',
         'password' => Hash::make('password'),
         'confirmed' => 1,
-        'role_id' => 3,
+        'role_id' => 2,
       ],
     ]);
   }

@@ -10,15 +10,13 @@ class CreateEmployeesTable extends Migration
 	 * Run the migrations.
 	 *
 	 * @return void
-	 */
+	*/
 	public function up()
 	{
 		Schema::create('employees', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('first_name', 100);
-			$table->string('last_name', 100);
-			$table->string('phone', 100);
-			$table->string('email', 100)->unique();
+			$table->unsignedBigInteger('user_id')->nullable();
+			$table->enum('status', ['Active', 'Maternity/Paternity Leave', 'Sick Leave', 'Vacation', 'Suspended', 'Terminated'])->default('Active');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +25,7 @@ class CreateEmployeesTable extends Migration
 	 * Reverse the migrations.
 	 *
 	 * @return void
-	 */
+	*/
 	public function down()
 	{
 		Schema::dropIfExists('employees');
