@@ -11,6 +11,7 @@ Note:
 System Setup
 - Once the project is clone or extracted from zip
 - Go to the project directory and run composer install
+- cp `.env.example .env`
 
 Example:
 ![image](https://github.com/lunestelle/Laravel-Appointment/assets/119985247/5970b2c4-9848-4c61-96e7-56253cf7af61)
